@@ -1,0 +1,249 @@
+/* ========================================
+   设计系统 — 深色 · 编辑级 · 克制 · 有性格
+   灵感参考：carlosmoro.com 等极简深色作品集
+   ======================================== */
+
+:root {
+  /* === 背景色阶（深空感，纯黑偏蓝） === */
+  --bg: #0A0E1A;            /* 主背景：深空黑蓝 */
+  --bg-alt: #0F1422;        /* 次背景：略浅一档 */
+  --bg-elev: #161B2E;       /* 卡片底色：轻微抬升 */
+  --bg-deep: #050810;       /* 最深底色 */
+
+  /* === 文字色阶（高对比，灰阶丰富） === */
+  --text: #F5F7FA;          /* 主文字：近白 */
+  --text-secondary: #A8B0BF;/* 次文字：浅灰 */
+  --text-muted: #6B7488;    /* 辅助：中性灰 */
+  --text-faint: #3A4154;    /* 弱化：边界灰 */
+
+  /* === 单一强调色（电光蓝，主调） === */
+  --accent: #5B8DEF;        /* 电光蓝，比纯蓝更通透 */
+  --accent-bright: #7BA5FF;
+  --accent-dark: #3B6CD9;
+  --accent-light: rgba(91, 141, 239, 0.12);
+  --accent-glow: rgba(91, 141, 239, 0.25);
+
+  /* === 辅助点缀色 === */
+  --warm: #E97451;          /* 砖橙：少量使用 */
+  --teal: #5EEAD4;          /* 青绿 */
+  --gold: #F5C66A;          /* 暖金 */
+
+  /* === 边框与分隔线（深色中的细线） === */
+  --border: #1F2638;        /* 主分割线 */
+  --border-soft: #181E2C;   /* 弱分割线 */
+  --border-strong: #2E3651; /* 强调线 */
+
+  /* === 渐变（克制使用） === */
+  --grad-ink: linear-gradient(180deg, #050810 0%, #0F1422 100%);
+  --grad-text: linear-gradient(180deg, #FFFFFF 0%, #5B8DEF 100%);
+  --grad-hero-bg: radial-gradient(ellipse 80% 60% at 50% 0%, #0F1422 0%, #0A0E1A 60%, #050810 100%);
+
+  /* === 阴影（在深色中改用发光感） === */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.6);
+  --glow-accent: 0 0 40px rgba(91, 141, 239, 0.15);
+
+  /* === 圆角 === */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* === 布局 === */
+  --container: 1700px;
+  --gutter: 72px;
+  --nav-height: 76px;
+
+  /* === 字体 === */
+  --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+  --font-serif: 'Instrument Serif', 'Noto Serif SC', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* === 动画曲线 === */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur: 0.8s;
+  --dur-slow: 1.2s;
+}
+
+/* ===== 重置 ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01';
+  font-variant-numeric: tabular-nums;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ===== 选区 ===== */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--text-faint);
+  border-radius: 0;
+  border: 3px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ===== 字体微调 ===== */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ===== 通用 ===== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.container-narrow {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ===== 滚动渐入动画 ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1.2s var(--ease) 0.1s;
+}
+.reveal-fade.is-visible { opacity: 1; }
+
+/* ===== 编辑级章节标记 ===== */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.section-tag__num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.section-tag__line {
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* ===== 区段大标题 ===== */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.section-title--serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.section-desc {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ===== 网格背景图案（深色中的细线网格） ===== */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+}
+
+/* ===== 光晕装饰（深色中的冷光） ===== */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: opacity;
+  contain: layout style paint;
+}
+
+/* ===== 顶部装饰条 ===== */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
