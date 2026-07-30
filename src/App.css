@@ -263,6 +263,14 @@ img {
   min-width: 0;
 }
 
+.academic-list__logo {
+  display: block;
+  width: 220px;
+  height: auto;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
 .academic-list__main {
   font-size: 15px;
   color: var(--text-main);

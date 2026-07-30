@@ -74,6 +74,13 @@ export default function AcademicPage() {
               <li key={i} className="academic-list__item academic-list__item--block">
                 <span className="academic-list__num">[{i + 1}]</span>
                 <div className="academic-list__content">
+                  {edu.logo && (
+                    <img
+                      src={edu.logo}
+                      alt={edu.school + '校徽'}
+                      className="academic-list__logo"
+                    />
+                  )}
                   <p className="academic-list__main">
                     <span className="academic-list__school">{edu.school}</span>
                     <span className="academic-list__sep"> | </span>
