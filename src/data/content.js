@@ -16,7 +16,6 @@ export const profile = {
       period: '2023.09 — 2026.06',
       school: '天津大学',
       major: '土木水利 · 硕士 保研',
-      logo: '/personal-website/images/tju-logo.png',
       courses: '工程数学、工程弹塑性力学、工程结构数值建模与分析方法、高等钢筋混凝土结构、高层建筑结构设计理论'
     },
     {

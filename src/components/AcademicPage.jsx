@@ -3,6 +3,23 @@ import { profile, basicInfo, researchDirections, publications, projects, skills,
 export default function AcademicPage() {
   return (
     <div className="academic">
+      {/* 顶部品牌横条 — 校徽 Logo */}
+      <div className="academic-brandbar">
+        <div className="academic-brandbar__inner">
+          <a href="#profile" className="academic-brandbar__logo-link" aria-label="天津大学">
+            <img
+              src="/personal-website/images/tju-logo.png"
+              alt="天津大学"
+              className="academic-brandbar__logo"
+            />
+          </a>
+          <div className="academic-brandbar__text">
+            <p className="academic-brandbar__cn">天津大学</p>
+            <p className="academic-brandbar__en">Tianjin University</p>
+          </div>
+        </div>
+      </div>
+
       {/* 顶部导航 */}
       <header className="academic-header">
         <div className="academic-header__inner">
@@ -74,13 +91,6 @@ export default function AcademicPage() {
               <li key={i} className="academic-list__item academic-list__item--block">
                 <span className="academic-list__num">[{i + 1}]</span>
                 <div className="academic-list__content">
-                  {edu.logo && (
-                    <img
-                      src={edu.logo}
-                      alt={edu.school + '校徽'}
-                      className="academic-list__logo"
-                    />
-                  )}
                   <p className="academic-list__main">
                     <span className="academic-list__school">{edu.school}</span>
                     <span className="academic-list__sep"> | </span>

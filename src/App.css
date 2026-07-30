@@ -52,6 +52,60 @@ img {
   display: block;
 }
 
+/* ===== 顶部品牌横条（校徽 Logo） ===== */
+.academic-brandbar {
+  background: linear-gradient(180deg, #F4F7FB 0%, #FFFFFF 100%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.academic-brandbar__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.academic-brandbar__logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.academic-brandbar__logo-link:hover {
+  text-decoration: none;
+}
+
+.academic-brandbar__logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.academic-brandbar__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+  padding-left: 14px;
+}
+
+.academic-brandbar__cn {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 4px;
+  line-height: 1.2;
+}
+
+.academic-brandbar__en {
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 1.5px;
+  margin-top: 2px;
+}
+
 /* ===== 顶部导航 ===== */
 .academic-header {
   position: sticky;
@@ -263,14 +317,6 @@ img {
   min-width: 0;
 }
 
-.academic-list__logo {
-  display: block;
-  width: 220px;
-  height: auto;
-  margin-bottom: 10px;
-  opacity: 0.95;
-}
-
 .academic-list__main {
   font-size: 15px;
   color: var(--text-main);
@@ -408,6 +454,28 @@ img {
 
 /* ===== 响应式 ===== */
 @media (max-width: 768px) {
+  .academic-brandbar__inner {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .academic-brandbar__logo {
+    height: 36px;
+  }
+
+  .academic-brandbar__text {
+    padding-left: 10px;
+  }
+
+  .academic-brandbar__cn {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .academic-brandbar__en {
+    font-size: 10px;
+  }
+
   .academic-header__inner {
     flex-direction: column;
     align-items: flex-start;
