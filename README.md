@@ -25,7 +25,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/Mutian330/personal-website.git
+git clone https://github.com/mutianjia/personal-website.git
 
 # 2. 进入项目目录
 cd personal-website
