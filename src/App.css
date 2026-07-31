@@ -452,6 +452,16 @@ img {
   margin-top: 4px;
 }
 
+.academic-footer__main {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.academic-footer__main > span {
+  white-space: nowrap;
+}
+
 /* ===== 响应式 ===== */
 @media (max-width: 768px) {
   .academic-brandbar__inner {

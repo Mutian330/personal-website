@@ -209,7 +209,11 @@ export default function AcademicPage() {
 
       {/* 页脚 */}
       <footer className="academic-footer">
-        <p>© 2026 贾木天 个人主页</p>
+        <p className="academic-footer__main">
+          <span>© 2026</span>
+          <span>贾木天</span>
+          <span>个人主页</span>
+        </p>
         <p className="academic-footer__sub">本页面由 GitHub Pages 托管</p>
       </footer>
     </div>
