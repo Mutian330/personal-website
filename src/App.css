@@ -54,7 +54,7 @@ img {
 
 /* ===== 顶部品牌横条（校徽 Logo） ===== */
 .academic-brandbar {
-  background: linear-gradient(180deg, #F4F7FB 0%, #FFFFFF 100%);
+  background: #FFFFFF;
   border-bottom: 1px solid var(--border-light);
 }
 
